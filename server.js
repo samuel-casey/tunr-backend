@@ -5,7 +5,6 @@ const app = express();
 
 // ENV Variables
 const PORT = process.env.PORT || 5000;
-const NODE_ENV = process.env.NODE_ENV;
 
 //CORS
 const cors = require('cors');
@@ -16,7 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 const morgan = require('morgan');
 
 // Middleware
-NODE_ENV === 'production' ? app.use(cors(corsOptions)) : app.use(cors());
 app.use(express.json());
 app.use(morgan('dev')); //logging
 
