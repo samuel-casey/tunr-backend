@@ -10,6 +10,6 @@ const DB = mongoose.connection;
 
 DB.on('open', () => console.log('Connected to Mongo'))
 	.on('close', () => console.log('Disconnected from Mongo'))
-	.catch('error', (err) => console.log(err));
+	.on('error', (err) => console.log(err));
 
 module.exports = mongoose;
