@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
 const mongoose = require("../db/connection");
 
-const SongSchema = new Schema(
+const songSchema = new Schema(
   {
     artist: String,
-    song: String,
-    song_length: Number,
+    title: String,
+    time: String,
  
   },
   
