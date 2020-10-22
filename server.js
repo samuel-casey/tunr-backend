@@ -5,6 +5,7 @@ const cors = require('cors');
 const songsController = require('./controllers/songs');
 require('dotenv').config();
 
+
 // Server instance
 const app = express();
 
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 		hello: 'Hello World! Welcome to Tunr',
 	});
 });
+
 
 //LISTENER
 app.listen(PORT, () => {
