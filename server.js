@@ -1,21 +1,19 @@
+// imports
 const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
 require('dotenv').config();
 
+// Server instance
 const app = express();
 
 // ENV Variables
 const PORT = process.env.PORT || 5000;
 
-//CORS
-const cors = require('cors');
-
+// Middleware
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const morgan = require('morgan');
-
-// Middleware
-app.use(express.json());
 app.use(morgan('dev')); //logging
 
 // Routes and Routers
