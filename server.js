@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const songsController = require('./controllers/songs');
 require('dotenv').config();
 
 
@@ -16,6 +17,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev')); //logging
+
+app.use('/api/songs', songsController);
 
 // Routes and Routers
 // Route for testing server is working
